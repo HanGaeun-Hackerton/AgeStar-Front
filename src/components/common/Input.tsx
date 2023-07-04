@@ -18,7 +18,6 @@ const Input = ({ ...props }: IProps) => {
 
 const InputWrapper = styled.div`
   position: relative;
-  margin-bottom: 35px;
 `;
 
 const InputContainer = styled.input`
