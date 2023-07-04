@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { styled } from "styled-components";
-import { LoginInpuData } from "../constants";
+import { LoginInputData } from "../constants";
 import { LoginInputDataType, LoginInputType } from "../../model/Login";
 import Input from "../common/Input";
+import { LoginInputAtom } from "../../utils/auth/authAtom";
+import { useRecoilState } from "recoil";
 
 const LoginInput = () => {
-  const [input, setInput] = useState<LoginInputType>({
-    id: "",
-    password: "",
-  });
+  const [input, setInput] = useRecoilState<LoginInputType>(LoginInputAtom);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -20,14 +19,14 @@ const LoginInput = () => {
 
   return (
     <InputContainer>
-      {LoginInpuData.map((item: LoginInputDataType, index: number) => (
+      {LoginInputData.map((item: LoginInputDataType, index: number) => (
         <div key={index}>
           <Title htmlFor={item.name}>{item.title}</Title>
           <Input
             id={item.name}
             name={item.name}
             onChange={(e) => onChange(e)}
-            type={item.title === "아이디" ? "text" : "password"}
+            type={item.title === "비밀번호" ? "password" : "text"}
           />
         </div>
       ))}
@@ -38,6 +37,8 @@ const LoginInput = () => {
 const InputContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 160px;
   flex-direction: column;
   margin-top: 36px;
   > div {
