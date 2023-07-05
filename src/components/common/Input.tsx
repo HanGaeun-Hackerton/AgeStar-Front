@@ -5,6 +5,7 @@ interface IProps {
   id: string;
   name: string;
   type: string;
+  placeholder: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 

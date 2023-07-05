@@ -10,5 +10,5 @@ export interface SignupInputType {
 export interface SignUpInputDataType {
   title: string;
   name: string;
-  placeholder?: string;
+  placeholder: string;
 }

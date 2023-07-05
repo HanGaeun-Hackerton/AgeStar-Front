@@ -27,6 +27,7 @@ const LoginInput = () => {
             name={item.name}
             onChange={(e) => onChange(e)}
             type={item.title === "비밀번호" ? "password" : "text"}
+            placeholder={item.placeholder}
           />
         </div>
       ))}

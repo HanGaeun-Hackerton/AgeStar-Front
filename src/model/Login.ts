@@ -1,7 +1,7 @@
 export interface LoginInputDataType {
   title: string;
   name: string;
-  placeholder?: string;
+  placeholder: string;
 }
 
 export interface LoginInputType {

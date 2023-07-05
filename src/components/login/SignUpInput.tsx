@@ -27,6 +27,7 @@ const SignUpInput = ({ page }: { page: number }) => {
           <Input
             id={item.name}
             name={item.name}
+            placeholder={item.placeholder}
             onChange={(e) => onChange(e)}
             type={item.title === "비밀번호" ? "password" : "text"}
           />
