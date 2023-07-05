@@ -1,21 +1,24 @@
-import React from "react";
-import Button from "../../components/common/Button";
+import Button from "../components/common/Button";
 import { styled } from "styled-components";
-import LoginInput from "../../components/login/LoginInput";
 import { useNavigate } from "react-router-dom";
+import SignUpInput from "../components/login/SignUpInput";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   return (
     <Container>
       <Wrapper>
-        <p>로그인</p>
-        <LoginInput />
+        <p>회원가입</p>
+        <SignUpInput page={1} />
         <span>
-          아직 계정이 없으신가요?
-          <GoSignUp onClick={() => navigate("/signup")}>회원가입하기</GoSignUp>
+          이미 계정이 있으신가요?
+          <GoSignUp onClick={() => navigate("/login")}>로그인하기</GoSignUp>
         </span>
-        <Button text="로그인"></Button>
+        <StyledLink to="/2signup">
+          <Button text="다음" />
+        </StyledLink>
+        <p>1 / 2</p>
       </Wrapper>
     </Container>
   );
@@ -44,7 +47,7 @@ const Wrapper = styled.div`
     font-size: 30px;
     font-family: "Inter";
     font-weight: 600;
-    padding-top: 30px;
+    padding-top: 20px;
     left: 115px;
   }
   span {
@@ -53,13 +56,17 @@ const Wrapper = styled.div`
     justify-content: center;
   }
   > span {
-    margin-top: 45px;
+    margin-top: 33px;
   }
 `;
 
 const GoSignUp = styled.span`
   font-weight: 600;
   padding-left: 3px;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
 
 export default LoginPage;

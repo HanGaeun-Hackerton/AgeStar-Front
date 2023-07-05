@@ -1,7 +1,7 @@
-import Button from "../../components/common/Button";
+import Button from "../components/common/Button";
 import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
-import SignUpInput from "../../components/login/SignUpInput";
+import SignUpInput from "../components/login/SignUpInput";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const LoginPage = () => {
           이미 계정이 있으신가요?
           <GoSignUp onClick={() => navigate("/login")}>로그인하기</GoSignUp>
         </span>
-        <Button text="로그인" />
+        <Button text="회원가입" />
         <p>2 / 2</p>
       </Wrapper>
     </Container>
