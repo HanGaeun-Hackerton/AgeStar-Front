@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import styled from "styled-components"; // 변경된 임포트 구문
+import styled, { createGlobalStyle } from "styled-components";
 
 interface IProps {
   id: string;
@@ -9,11 +9,20 @@ interface IProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
+const PlaceholderStyle = createGlobalStyle`
+  input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+`;
+
 const Input = ({ ...props }: IProps) => {
   return (
-    <InputWrapper>
-      <InputContainer {...props} />
-    </InputWrapper>
+    <>
+      <PlaceholderStyle />
+      <InputWrapper>
+        <InputContainer {...props} />
+      </InputWrapper>
+    </>
   );
 };
 

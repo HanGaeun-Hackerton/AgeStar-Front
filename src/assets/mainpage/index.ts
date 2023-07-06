@@ -1,0 +1,14 @@
+export { default as AgeStarLOGO } from "../icons/AgeStar_iCon 1.png";
+export { default as MyPage } from "../icons/person-circle-outline 1.svg";
+export { default as SearchIcons } from "../icons/search-icon 1.svg";
+export { default as ProfilePhoto } from "../icons/image 13.svg";
+export { default as ChangePhoto } from "../icons/image 14.svg";
+export { default as BenefitIcon } from "../icons/image 2.svg";
+export { default as Bohum } from "../icons/image 3.svg";
+export { default as Card } from "../icons/image 8.svg";
+export { default as News } from "../icons/image 39.svg";
+export { default as QandA } from "../icons/image 9.svg";
+export { default as Gituar } from "../icons/image 41.svg";
+export { default as Recommend } from "../icons/image 40.svg";
+export { default as CountryLogo } from "../icons/1111-removebg-preview 1.svg";
+export { default as DetailForward } from "../icons/chevron.forward.png";

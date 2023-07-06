@@ -13,10 +13,10 @@ const LoginPage = () => {
         <SignUpInput page={1} />
         <span>
           이미 계정이 있으신가요?
-          <GoSignUp onClick={() => navigate("/login")}>로그인하기</GoSignUp>
+          <GoSignUp onClick={() => navigate("/")}>로그인하기</GoSignUp>
         </span>
         <StyledLink to="/2signup">
-          <Button text="다음" />
+          <Button onClick={() => navigate("/2singup")} text="다음" />
         </StyledLink>
         <p>1 / 2</p>
       </Wrapper>

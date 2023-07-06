@@ -2,9 +2,21 @@ import Button from "../components/common/Button";
 import { styled } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import SignUpInput from "../components/login/SignUpInput";
+import { toast, Toaster } from "react-hot-toast";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+
+  const onLoginClick = () => {
+    const loadingToastId = toast.loading("회원가입 진행 중...");
+
+    setTimeout(() => {
+      toast.dismiss(loadingToastId);
+      toast.success("회원가입에 성공하였습니다!", { duration: 1000 });
+      navigate("/main");
+    }, 1500);
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -12,9 +24,10 @@ const LoginPage = () => {
         <SignUpInput page={2} />
         <span>
           이미 계정이 있으신가요?
-          <GoSignUp onClick={() => navigate("/login")}>로그인하기</GoSignUp>
+          <GoSignUp onClick={() => navigate("/")}>로그인하기</GoSignUp>
         </span>
-        <Button text="회원가입" />
+        <Button onClick={onLoginClick} text="회원가입" />
+        <Toaster position="top-right" reverseOrder={false} />
         <p>2 / 2</p>
       </Wrapper>
     </Container>
